@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  
+}
+
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 900;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  align-content: center;
+
+}
+
+.modal-content {
+  background: #fff;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.4s ease;
+ 
+}
+
+
+.modal-content .close {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #888;
+  cursor: pointer;
+}
+
+.modal-content .close:hover {
+  color: #000;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.modal-content label {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  margin-top: 1rem;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content button {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+.modal-content .btn {
+  background-color: #2a4860;
+  width: 50%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  align-self: flex-end;
+}
+
+.modal-content .btn:hover {
+  background-color: #2a4860;
+}
+
+
+@media (max-width: 600px) {
+  .modal-content {
+    padding: 1.2rem;
+    margin-top: 4rem;
+    width: 100%;
+    max-width: 95%;
+    border-radius: 8px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .modal-content form {
+    gap: 0.75rem;
+  }
+
+  .modal-content label {
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+  }
+
+  .modal-content input,
+  .modal-content select {
+    font-size: 0.95rem;
+    padding: 0.5rem;
+  }
+
+  .modal-content button {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+    width: 100%;
+    align-self: stretch;
+  }
+
+  .modal-content .close {
+    font-size: 1.2rem;
+    top: 0.5rem;
+    right: 0.8rem;
+  }
+}
+

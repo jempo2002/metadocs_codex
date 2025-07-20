@@ -1,0 +1,180 @@
+
+#admin-contenido h1 {
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  color: #2D3748;
+}
+
+.cont_nombre {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cont_nombre input,
+.cont_nombre select {
+  display: block;
+  padding: 0.625rem;
+  border: 1px solid #CBD5E0;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  outline: none;
+}
+
+/* Tabla */
+.tabla-contenedor {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+}
+
+.tabla-usuarios {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  margin-top: 2rem;
+  min-width: 600px;
+}
+
+.tabla-usuarios th,
+.tabla-usuarios td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #E2E8F0;
+  color: #2D3748;
+  font-size: 0.9rem;
+}
+
+.tabla-usuarios th {
+  background-color: #EDF2F7;
+  font-weight: bold;
+}
+
+.tabla-usuarios tr:hover {
+  background-color: #F7FAFC;
+}
+
+.tabla-usuarios td i.bi {
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 1rem;
+  color: #4A5568;
+}
+
+.tabla-usuarios td i.bi-pencil:hover {
+  color: #2B6CB0;
+}
+
+.tabla-usuarios td i.bi-trash:hover {
+  color: red;
+}
+
+/* Menú lateral oculto (solo móvil visible) */
+.solo_mobil {
+  display: block;
+}
+
+.paginacion {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.btn-paginacion {
+    display: inline-block;
+    padding: 10px 16px;
+    margin: 0 2px;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    text-decoration: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    min-width: 44px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.btn-paginacion:hover {
+    background-color: #e9ecef;
+    color: #495057;
+    border: none;
+    
+}
+
+.btn-paginacion.activa {
+    background-color: #3D688A;
+    color: white;
+  
+}
+
+.btn-paginacion.activa:hover {
+    background-color: #2A4860;
+    
+    transform: none;
+}
+
+/* ----- TABLET (min-width: 768px) ----- */
+@media (min-width: 768px) {
+  .cont_nombre {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .cont_nombre input,
+  .cont_nombre select {
+    width: 50%;
+    max-width: 250px;
+    margin-top: 0;
+  }
+
+  .tabla-usuarios th,
+  .tabla-usuarios td {
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  .tabla-usuarios td i.bi {
+    font-size: 1.1rem;
+  }
+}
+
+/* ----- DESKTOP (min-width: 1024px) ----- */
+@media (min-width: 1024px) {
+  #admin-contenido {
+    margin-left: 18%;
+    padding: 20px;
+    
+  }
+
+  #cabezote {
+    display: none;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  #menu_opciones {
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .solo_mobil {
+    display: none;
+  }
+
+  .tabla-usuarios td i.bi {
+    font-size: 1.2rem;
+  }
+}

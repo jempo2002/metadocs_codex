@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.7s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color:  #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 20px;
+    /* box-shadow eliminado para diseño plano */
+    padding: 20px;
+    text-align: center;
+}
+
+.image-placeholder img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.mensage {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 20px 0;
+    line-height: 1.5;
+}
+
+.ok-button {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #3D688A;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 0;
+    width: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+
+.ok-button:hover {
+    background-color: #3D688A;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 600px;
+    }
+}

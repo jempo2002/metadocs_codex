@@ -1,0 +1,348 @@
+/* Estilos base corregidos */
+.contenedor-principal {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Previene scroll horizontal */
+}
+
+.contenedor-principal h1 {
+    font-size: 24px;
+    color: #2d3748;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#form_contenedor {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Área de subida de archivos */
+#area_division {
+    border: 2px dashed #cbd5e0;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 24px;
+    background: #f8fafc;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#area_division:hover {
+    border-color: #3D688A;
+    background: #f0f8ff;
+}
+
+#area_division.drag-over {
+    border-color: #3D688A;
+    background: #f0f8ff;
+    transform: scale(1.02);
+}
+
+#area_division i {
+    font-size: 48px;
+    color: #3D688A;
+    display: block;
+    margin-bottom: 16px;
+}
+
+#area_division h3 {
+    color: #4a5568;
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+#area_division p {
+    color: #718096;
+    font-size: 12px;
+    margin: 0;
+}
+
+.input-documento {
+    display: none;
+}
+
+/* Vista previa de archivos */
+.vista-previa {
+    display: none;
+    background: #f0f8ff;
+    border: 1px solid #3D688A;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 24px;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.archivo-preview {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-width: 0; /* Permite que el contenido se ajuste */
+}
+
+.archivo-icono {
+    width: 32px;
+    height: 32px;
+    background: #3D688A;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    flex-shrink: 0; /* No se encoge */
+}
+
+.archivo-info {
+    flex: 1;
+    min-width: 0; /* Permite que el texto se trunque si es necesario */
+    overflow: hidden;
+}
+
+.archivo-nombre {
+    font-weight: 500;
+    color: #2d3748;
+    font-size: 14px;
+    margin-bottom: 2px;
+    word-break: break-word; /* Rompe palabras largas */
+    overflow-wrap: break-word;
+}
+
+.archivo-tamano {
+    color: #718096;
+    font-size: 12px;
+}
+
+.btn-remover {
+    background: #e53e3e;
+    color: white;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* No se encoge */
+}
+
+.btn-remover:hover {
+    background: #c53030;
+  
+}
+
+/* Campos del formulario */
+.campos-formulario {
+    margin-top: 24px;
+    width: 100%;
+}
+
+.grupo-campo {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.etiqueta-campo {
+    display: block;
+    margin-bottom: 8px;
+    color: #2d3748;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.campo-input,
+.campo-select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: white;
+    font-family: inherit;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+.campo-input:focus,
+.campo-select:focus {
+    outline: none;
+    border-color: #3D688A;
+}
+
+.campo-input::placeholder {
+    color: #a0aec0;
+}
+
+textarea.campo-input {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Fila de campos - Mobile stacked */
+.fila-campos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Botón de envío */
+.btn-enviar {
+    width: 100%;
+    padding: 14px;
+    background-color: #3D688A;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 24px;
+    box-sizing: border-box;
+}
+
+.btn-enviar:hover {
+    box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
+}
+
+.btn-enviar:active {
+    transform: translateY(0);
+}
+
+.btn-enviar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-cargando {
+    display: none;
+}
+
+.btn-enviar.loading .btn-texto {
+    display: none;
+}
+
+.btn-enviar.loading .btn-cargando {
+    display: inline;
+}
+
+/* Estados adicionales */
+.grupo-campo.error .campo-input,
+.grupo-campo.error .campo-select {
+    border-color: #e53e3e;
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+}
+
+.mensaje-error {
+    color: #e53e3e;
+    font-size: 12px;
+    margin-top: 4px;
+    display: none;
+}
+
+.grupo-campo.error .mensaje-error {
+    display: block;
+}
+
+
+
+/* Media query para tablets */
+@media (min-width: 768px) {
+    .contenedor-principal {
+        padding: 40px;
+    }
+
+    .contenedor-principal h1 {
+        font-size: 28px;
+        text-align: left;
+    }
+
+    #area_division {
+        padding: 60px 40px;
+    }
+
+    #area_division i {
+        font-size: 64px;
+    }
+
+    #area_division h3 {
+        font-size: 18px;
+    }
+
+    #area_division p {
+        font-size: 14px;
+    }
+
+    .fila-campos {
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    .fila-campos .grupo-campo {
+        flex: 1;
+        min-width: 0; /* Permite que se ajuste correctamente */
+    }
+
+    .archivo-icono {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .archivo-nombre {
+        font-size: 15px;
+    }
+
+    .archivo-tamano {
+        font-size: 13px;
+    }
+}
+
+/* Media query para desktop */
+@media (min-width: 1024px) {
+    .contenedor-principal {
+        padding: 40px;
+        margin-left: 16%;
+        width: 84%;
+    }
+
+    .contenedor-principal h1{
+        padding: 0 24px;
+    }
+
+    #form_contenedor {
+        padding: 24px;
+    
+        margin: 0 auto;
+    }
+}
+
+
+
+

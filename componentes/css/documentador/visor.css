@@ -1,0 +1,71 @@
+ #modal_visor {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #modal_visor_content {
+            width: 90%;
+            height: 90%;
+            background-color: white;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        #modal_visor iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        #cerrar_visor {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 1001;
+        }
+
+        #cerrar_visor:hover {
+            color: red;
+        }
+
+        /* Mostrar solo botón modal en desktop */
+        .btn_ver_modal {
+            display: inline-block;
+        }
+
+        .btn_ver_nueva_ventana {
+            display: none;
+        }
+
+        /* En móviles y tablets (max-width: 1024px), mostrar solo botón nueva ventana */
+        @media (max-width: 1024px) {
+            .btn_ver_modal {
+                display: none;
+            }
+            
+            .btn_ver_nueva_ventana {
+                display: inline-block;
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            #modal_visor_content {
+                width: 95%;
+                height: 95%;
+            }
+        }

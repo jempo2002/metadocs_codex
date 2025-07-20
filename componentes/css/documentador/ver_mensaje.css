@@ -1,0 +1,81 @@
+.mensaje-detalle {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 20px 15px;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-sizing: border-box;
+}
+.boton-volver a {
+    display: inline-block;
+    background-color: #3D688A;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.2s;
+}
+
+.boton-volver a:hover {
+    background-color: #345a77;
+}
+
+.mensaje-detalle h2 {
+    font-size: 1.4em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.mensaje-detalle .rol {
+    font-size: 0.8em;
+    color: #666;
+}
+
+.mensaje-detalle .fecha {
+    color: #555;
+    font-size: 0.95em;
+}
+
+.mensaje-detalle .descripcion {
+    font-size: 1em;
+    color: #444;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+/* Tablets */
+@media screen and (min-width: 700px) {
+    .mensaje-detalle {
+        padding: 30px 25px;
+        gap: 20px;
+    }
+
+    .mensaje-detalle h2 {
+        font-size: 1.6em;
+    }
+
+    .mensaje-detalle .descripcion {
+        font-size: 1.05em;
+    }
+}
+
+/* Escritorio */
+@media screen and (min-width: 1024px) {
+    .mensaje-detalle {
+        padding: 30px;
+    }
+
+    .mensaje-detalle h2 {
+        font-size: 1.8em;
+    }
+
+    .mensaje-detalle .descripcion {
+        font-size: 1.1em;
+    }
+}

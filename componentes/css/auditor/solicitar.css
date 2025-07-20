@@ -1,0 +1,195 @@
+h1 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 45px;
+}
+
+/* Contenedor del formulario */
+.formulario-solicitud {
+    background-color: #fff;
+    border-radius: 8px;
+    width: 100%;
+}
+
+/* Campos del formulario */
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: #375a7f;
+}
+
+.campo textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Selector con búsqueda (usuarios / expedientes) */
+.usuario-selector {
+    position: relative;
+    width: 100%;
+}
+
+.usuario-input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.usuario-input:focus {
+    border-color: #375a7f;
+}
+
+/* Dropdown de sugerencias */
+.usuario-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.usuario-dropdown.show {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 10px 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #333;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover,
+.dropdown-item.selected {
+    background-color: #f8f9fa;
+    color: #3D688A;
+}
+
+.dropdown-item:active {
+    background-color: #e9ecef;
+}
+
+.no-results {
+    padding: 12px;
+    color: #666;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Scrollbar personalizada */
+.usuario-dropdown::-webkit-scrollbar {
+    width: 6px;
+}
+
+.usuario-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.usuario-dropdown::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.usuario-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Botón de envío */
+.btn-solicitar {
+    background-color: #3D688A;
+    color: #fff;
+    border: none;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.btn-solicitar:hover {
+    background-color: #2c3e50;
+}
+
+.btn-solicitar:active {
+    transform: translateY(1px);
+}
+
+/* Responsive - móviles */
+@media (max-width: 768px) {
+    .usuario-dropdown {
+        max-height: 150px;
+    }
+
+    .dropdown-item {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 24px;
+        text-align: left;
+    }
+
+    .campo input,
+    .campo select,
+    .campo textarea {
+        font-size: 15px;
+    }
+
+    .btn-solicitar {
+        width: auto;
+        padding: 14px 24px;
+        font-size: 15px;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+    h1 {
+        font-size: 28px;
+    }
+}

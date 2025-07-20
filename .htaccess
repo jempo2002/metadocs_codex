@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Redirige /login a login.php
+RewriteRule ^login$ login.php [L]
+
+# Opcional: ocultar .php en cualquier archivo
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)$ $1.php [L]

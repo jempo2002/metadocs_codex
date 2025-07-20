@@ -1,0 +1,270 @@
+.demo-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Estilos comunes para ambos modales */
+.modal_confirmar {
+    display: none;
+    position: fixed;
+    z-index: 9999 !important;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    place-items: center;
+    align-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal_contenedor {
+    background: #fff;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    padding: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    animation: slideDown 0.4s ease;
+}
+
+.modal_contenedor .close {
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+}
+
+.modal_contenedor h3 {
+    margin-top: 15px;
+}
+
+.modal_contenedor button {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal_contenedor .btn_aprobar {
+    background-color: #3D688A;
+    color: #fff;
+}
+
+.modal_contenedor .btn_cancelar {
+    background-color: #333333;
+    color: #fff;
+}
+
+/* Estilos para móvil - botones uno debajo del otro */
+.botones_modal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal_contenedor .btn_rechazar {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.modal_contenedor .btn_rechazar:hover {
+    background-color: #c82333;
+}
+
+.campo_motivo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo_motivo label {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.campo_motivo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    resize: vertical;
+    min-height: 100px;
+    transition: border-color 0.2s ease;
+}
+
+.campo_motivo textarea:focus {
+    outline: none;
+
+  
+}
+
+.campo_motivo textarea::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+
+/* tablet */
+@media (min-width: 768px) {
+    .modal_contenedor {
+        width: 70%;
+        max-width: 550px;
+        padding: 2.5rem;
+        gap: 25px;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal_contenedor .close {
+        top: 1rem;
+        right: 1.2rem;
+        font-size: 1.8rem;
+        transition: color 0.2s ease;
+    }
+
+    .modal_contenedor .close:hover {
+        color: #555;
+    }
+
+    .modal_contenedor h3 {
+        font-size: 1.3rem;
+        margin-top: 20px;
+    }
+
+    .modal_contenedor button {
+        padding: 12px 20px;
+        font-size: 1rem;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+        min-width: 120px;
+    }
+
+    .modal_contenedor .btn_aprobar:hover {
+        background-color: #2d5470;
+    }
+
+    .modal_contenedor .btn_cancelar:hover {
+        background-color: #1a1a1a;
+    }
+
+    /* Botones horizontales para tablet */
+    .botones_modal {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+      .campo_motivo label {
+        font-size: 1rem;
+    }
+    
+    .campo_motivo textarea {
+        padding: 14px;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+    
+    .modal_contenedor .btn_rechazar:hover {
+        background-color: #c82333;
+        transform: translateY(-1px);
+    }
+
+}
+
+/* pc */
+@media (min-width: 1024px) {
+    .modal_contenedor {
+        width: 60%;
+        max-width: 600px;
+        padding: 3rem;
+        gap: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    .modal_contenedor .close {
+        top: 1.2rem;
+        right: 1.5rem;
+        font-size: 2rem;
+    }
+
+    .modal_contenedor h3 {
+        font-size: 1.5rem;
+        margin-top: 25px;
+    }
+
+    .modal_contenedor button {
+        padding: 14px 24px;
+        font-size: 1.1rem;
+        border-radius: 10px;
+        min-width: 140px;
+        font-weight: 500;
+    }
+
+    .modal_contenedor .btn_aprobar:hover {
+        background-color: #2d5470;
+    }
+
+    .modal_contenedor .btn_cancelar:hover {
+        background-color: #1a1a1a;
+    }
+
+    /* Botones horizontales para desktop con más espacio */
+    .botones_modal {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: flex-end;
+    }
+
+      .campo_motivo {
+        gap: 10px;
+    }
+    
+    .campo_motivo label {
+        font-size: 1.1rem;
+    }
+    
+    .campo_motivo textarea {
+        padding: 16px;
+        font-size: 1rem;
+        border-radius: 10px;
+        min-height: 120px;
+    }
+
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

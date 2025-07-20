@@ -1,0 +1,299 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ===== HEADER ===== */
+#cabezote {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+#cabezote .bi {
+  font-size: 2em;
+  cursor: pointer;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+#cuerpo {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+/* ===== NAV LATERAL ===== */
+#menu-lateral {
+  background-color: #3D688A;
+  color: #FFFFFF;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 65%;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  flex-shrink: 0;
+}
+
+#img_menu {
+  text-align: center;
+  padding: 20px 15px 30px;
+}
+
+#img_menu img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+#menu-lateral ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Permite que el ul ocupe el espacio disponible */
+}
+
+/* Contenedor para las opciones principales del menú */
+.menu-opciones-principales {
+  flex: 1; /* Ocupa todo el espacio disponible */
+}
+
+/* Separador visual para el botón cerrar sesión */
+.cerrar-sesion-separado {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin: auto  0 20px; /* Empuja el elemento hacia abajo */
+  
+
+  
+}
+
+/* Estilo base para enlaces */
+#menu-lateral li a,
+.gestion_usuario a,
+.gestion-usuarios a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #E4E4E4;
+  text-decoration: none;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  padding: 14px 20px;
+  width: 100%;
+  letter-spacing: 0.025em;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+#menu-lateral li a .bi,
+.gestion_usuario a .bi,
+.gestion-usuarios a .bi {
+  font-size: 1.3rem;
+  margin-right: 12px;
+}
+
+/* Ítem activo (ej. Reportes) */
+#menu-lateral a.activo {
+  background-color: #2A4860;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* ===== SUBMENÚS ===== */
+.sub_menu {
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-top: 6px;
+   transition: all 0.5s ;
+}
+
+.sub_menu.mostrar {
+  max-height: 500px;
+  padding: 8px 0;
+}
+
+.sub_menu a {
+  position: relative;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  padding: 10px 5px;
+  margin-left: 32px; /* Alineado con el ícono del menú principal */
+  color: #bcbcbc;
+  display: flex;
+  align-items: center;
+  
+  border-left: 2px solid #EDF2F7;
+}
+
+/* Pseudo-elemento para el borde de color dinámico */
+.sub_menu a::before {
+  content: "";
+  position: absolute;
+  left: -2px; /* Posiciona sobre el borde blanco */
+  top: 0;
+  width: 2px; /* Mismo ancho que el borde original */
+  height: 100%; /* Cubre todo el alto del elemento */
+  background-color: transparent;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+/* Elemento activo del submenú - borde azul oscuro estático */
+.sub_menu a.submenu-activo::before {
+  background-color: #2A4860 !important; /* Color azul oscuro permanente */
+}
+
+/* Hover - cambia el color del borde parcial */
+.sub_menu a:hover::before {
+   background-color: #2A4860; /* Color azul oscuro por defecto en hover */
+}
+
+/* Estados activos con diferentes colores */
+
+.sub_menu a .bi {
+  font-size: 1.1rem;
+  margin-right: 10px;
+}
+
+/* Formulario dentro de submenú */
+.sub_menu form button {
+  background: transparent;
+  outline: none;
+  border: none;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  padding: 14px 20px;
+  width: 100%;
+  margin-left: 32px; /* Alineado con el ícono del menú principal */
+  color: #E4E4E4;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  border-left: 2px solid #EDF2F7;
+}
+
+/* Aplicar el mismo efecto a los botones del formulario */
+.sub_menu form button::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+/* Botón activo del submenú */
+.sub_menu form button.submenu-activo::before {
+  background-color: #2A4860 !important;
+}
+
+.sub_menu form button:hover::before {
+  background-color: #2A4860;
+}
+
+.sub_menu form button .bi {
+  font-size: 1.1rem;
+  margin-right: 10px;
+}
+
+.sub_menu li:hover {
+  background-color: transparent;
+}
+
+/* ===== BOTÓN VOLVER (solo en móvil) ===== */
+
+
+
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+#admin-contenido {
+  padding: 20px;
+  width: 100%;
+}
+
+/* ===== TABLETAS ===== */
+@media screen and (min-width: 700px) and (max-width: 1023px) {
+  #menu-lateral {
+    width: 45%;
+  }
+
+  #img_menu img {
+    width: 160px;
+  }
+
+  #menu-lateral .bi {
+    font-size: 2.5em;
+  }
+
+  .sub_menu a,
+  .sub_menu form button {
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+  }
+}
+
+/* ===== ESCRITORIO ===== */
+@media screen and (min-width: 1024px) {
+
+   #admin-contenido {
+      margin-left: 16%;
+      padding: 30px;
+    }
+
+  #cabezote {
+    display: none;
+  }
+
+  #menu-lateral {
+    width: 16%;
+    transform: translateX(0) !important;
+  }
+
+  .sub_menu {
+    margin-left: 0;
+  }
+
+  #menu-lateral li #solo_mobil {
+    display: none;
+  }
+
+  #menu-lateral li a,
+  .gestion_usuario a,
+  .gestion-usuarios a {
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
+    padding: 12px 20px;
+  }
+
+  .sub_menu a,
+  .sub_menu form button {
+    font-size: clamp(0.8rem, 1vw, 0.85rem);
+    padding: 8px 35px;
+  }
+}

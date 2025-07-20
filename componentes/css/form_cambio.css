@@ -1,0 +1,175 @@
+*{
+    box-sizing: border-box;
+    transition: all 0.8s;
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+h1,p{
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+body{
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+    height: 90vh;
+    background-color: #F5F5F5;
+
+}
+
+#cuerpo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+#cuerpo form{
+    display: flex;
+    flex-direction: column;
+    gap:3px;
+}
+
+#cuerpo form h1{
+    font-size: 2.5em;
+}
+
+#cuerpo form p{
+    font-size: 1.6em;
+    margin-bottom:50px ;
+    color: #666;
+}
+#cuerpo form label {
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+
+span#mensaje_err{
+    color:#E53E3E;
+    display: none;
+}
+
+
+
+#cuerpo form input {
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    outline: none;
+    margin-bottom: 25px;
+}
+
+#cuerpo form button {
+    padding: 15px;
+    font-weight: bold;
+    margin-top: 30px;
+    border: none;
+    background-color: #3D688A;
+    color: white;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#cuerpo form button:hover {
+    background-color: #2a4860;
+}
+
+
+/* TABLET */
+
+@media screen and (min-width: 700px)  and (max-width: 1023px) {
+
+
+#cuerpo form{
+    width: 85%;
+}
+
+    #cuerpo form h1{
+    font-size: 3em;
+}
+
+#cuerpo form p{
+    font-size: 2em;
+    margin-bottom: 110px;
+   
+}
+
+#cuerpo form label{
+    font-size: 1.7em;
+}
+
+
+#cuerpo form input{
+    padding: 40px 10px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    margin-bottom: 100px;
+   
+}
+
+#cuerpo form button{
+    padding: 40px;
+    font-size: 1.5em;
+    
+}
+ }
+
+ @media screen and (min-width: 1024px){
+    
+    body{
+        height: 100vh;
+    }
+    
+    #cuerpo form{
+    padding: 50px;
+    background: #FFF;
+    border-radius: 20px;
+    }
+    #cuerpo form{
+    width: 35%;
+}
+
+    #cuerpo form h1{
+    font-size: 2em;
+}
+
+#cuerpo form p{
+    font-size: 1.2em;
+    
+   
+}
+
+#cuerpo form input{
+    padding: 15px 5px;
+   
+   
+}
+
+#cuerpo form button{
+    padding: 15px ;
+   
+   
+}
+
+#cuerpo form button:hover{
+    
+    background-color: #2a4860;
+   
+}
+ }
+
+

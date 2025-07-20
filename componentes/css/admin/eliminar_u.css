@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.8s;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999 !important;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+     animation: fadeIn 0.3s ease;
+    
+}
+
+.modal-contenedor {
+    background: #fff;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    animation: slideDown 0.4s ease;
+}
+
+.modal-contenedor h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-contenedor p {
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.modal-contenedor .close {
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+}
+
+.modal-acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.btn-eliminar,
+.btn-cancelar {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-eliminar {
+    background-color: red;
+    color: white;
+}
+
+.btn-eliminar:hover {
+    background-color: #c82333;
+}
+
+.btn-cancelar {
+    background-color: #6c767d;
+    color: white;
+}
+
+.btn-cancelar:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive para tablet y móvil */
+@media (max-width: 768px) {
+    .modal-contenedor {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .modal-contenedor h2 {
+        font-size: 1.3rem;
+    }
+
+    .modal-contenedor p {
+        font-size: 1rem;
+    }
+
+    .btn-eliminar,
+    .btn-cancelar {
+        font-size: 0.95rem;
+        padding: 0.45rem 0.8rem;
+    }
+
+    .modal-acciones {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+
+    .btn-cancelar,
+    .btn-eliminar {
+        width: 100%;
+    }
+
+    .modal-contenedor .close {
+        top: 0.5rem;
+        right: 0.8rem;
+        font-size: 1.3rem;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,229 @@
+ .modal_expediente {
+            display: none; /* Cambiado para mostrar el modal */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .contenido_modal_expediente {
+            position: relative;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            border-radius: 8px;
+            width: 95%;
+            max-width: none;
+            animation: slideDown 0.4s ease;
+            overflow: hidden;
+        }
+
+        .cabecera_modal_expediente {
+            background: #3D688A;
+            color: white;
+            padding: 15px 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .titulo_modal_expediente {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+            flex: 1;
+        }
+
+        .cerrar_modal_expediente {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            line-height: 1;
+            padding: 0;
+            background: none;
+            border: none;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.2s ease;
+        }
+
+        .cerrar_modal_expediente:hover,
+        .cerrar_modal_expediente:focus {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #f1f1f1;
+        }
+
+        .cuerpo_formulario_expediente {
+            padding: 20px;
+        }
+
+        .cuerpo_formulario_expediente label {
+            display: block;
+            margin-bottom: 6px;
+            color: #333;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .cuerpo_formulario_expediente input[type="text"],
+        .cuerpo_formulario_expediente textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 2px solid #e1e5e9;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            background-color: #fafbfc;
+            box-sizing: border-box;
+            outline: none;
+            margin-bottom: 16px;
+        }
+
+        .cuerpo_formulario_expediente textarea {
+            resize: vertical;
+            min-height: 80px;
+            margin-bottom: 0;
+        }
+
+        .acciones_formulario_expediente {
+            padding: 0 20px 20px 20px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .boton_guardar_expediente {
+            background: #3D688A;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .boton_guardar_expediente:hover {
+            transform: translateY(-1px);
+            background-color: #2a4860;
+        }
+
+        .boton_guardar_expediente:active {
+            transform: translateY(0);
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media Query Tablet */
+        @media (min-width: 768px) {
+            .contenido_modal_expediente {
+                width: 90%;
+                max-width: 500px;
+                border-radius: 10px;
+            }
+            .cabecera_modal_expediente {
+                padding: 18px 25px;
+            }
+            .titulo_modal_expediente {
+                font-size: 1.4rem;
+            }
+            .cerrar_modal_expediente {
+                font-size: 26px;
+            }
+            .cuerpo_formulario_expediente {
+                padding: 25px;
+            }
+            .cuerpo_formulario_expediente label {
+                font-size: 0.95rem;
+                margin-bottom: 8px;
+            }
+            .cuerpo_formulario_expediente input[type="text"],
+            .cuerpo_formulario_expediente textarea {
+                padding: 12px 15px;
+                font-size: 1rem;
+                border-radius: 8px;
+                margin-bottom: 20px;
+            }
+            .cuerpo_formulario_expediente textarea {
+                min-height: 100px;
+                margin-bottom: 0;
+            }
+            .acciones_formulario_expediente {
+                padding: 0 25px 25px 25px;
+            }
+            .boton_guardar_expediente {
+                padding: 12px 25px;
+                font-size: 1rem;
+                border-radius: 8px;
+            }
+            .boton_guardar_expediente:hover {
+                transform: translateY(-2px);
+            }
+        }
+
+        /* Media Query PC */
+        @media (min-width: 1024px) {
+            .contenido_modal_expediente {
+                width: 85%;
+                max-width: 550px;
+                border-radius: 12px;
+            }
+            .cabecera_modal_expediente {
+                padding: 20px 30px;
+            }
+            .titulo_modal_expediente {
+                font-size: 1.5rem;
+            }
+            .cerrar_modal_expediente {
+                font-size: 28px;
+                width: 32px;
+                height: 32px;
+            }
+            .cuerpo_formulario_expediente {
+                padding: 30px;
+            }
+            .cuerpo_formulario_expediente input[type="text"],
+            .cuerpo_formulario_expediente textarea {
+                padding: 14px 16px;
+                font-size: 1rem;
+            }
+            .cuerpo_formulario_expediente textarea {
+                min-height: 120px;
+            }
+            .acciones_formulario_expediente {
+                padding: 0 30px 30px 30px;
+            }
+            .boton_guardar_expediente {
+                padding: 14px 32px;
+                font-size: 1rem;
+            }
+        }

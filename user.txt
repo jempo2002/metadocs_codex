@@ -1,0 +1,18 @@
+user : juanes@gmail.com
+pass: juanes11
+rol: admin
+
+
+
+user-admin : dg244049@gmail.com
+pass : jorge123
+rol: admin
+
+user-auditor: jorgemulato206@gmail.com
+pass : jorge123456
+rol: auditor
+
+user-documentador: metadocs7@gmail.com
+pass: metadocs123
+rol: documentador
+

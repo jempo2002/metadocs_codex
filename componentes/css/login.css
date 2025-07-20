@@ -1,0 +1,248 @@
+/* Reset básico y box-sizing */
+* {
+    box-sizing: border-box;
+    transition: all 0.7s;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 17px;
+    width: 100%;
+    overflow-x: hidden;
+  
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+#img_login {
+    display: none;
+}
+
+#cuerpo {
+    width: 100%;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    gap: 10px;
+    
+}
+
+#form input {
+    padding: 16px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 16px;
+}
+
+#label_contraseña {
+    margin-top: 30px;
+}
+
+#form figure {
+    text-align: center;
+}
+
+#form img {
+    width: 80%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+#subtitulo {
+    color: #ccc;
+    text-align: center;
+    margin: 0 0 20px 0;
+    position: relative;
+    bottom: 4%;
+}
+
+.input-error {
+    border: 1.5px solid #e53e3e !important;
+    background-color: #fff5f5;
+}
+
+.error_mensaje {
+    color: #e53e3e;
+    font-size: 0.8em;
+    margin-left: 4px;
+}
+
+#recuperacion {
+    font-size: 0.8em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#form a {
+    color: #3D688A;
+}
+
+#checkbox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+
+
+#btn_login {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#btn_iniciar {
+    padding: 15px;
+    width: 100%;
+    max-width: 250px;
+    font-weight: bold;
+    border: none;
+    background-color: #3D688A;
+    color: white;
+    border-radius: 20px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/* Tablet */
+@media screen and (min-width: 700px) {
+    #form {
+        padding: 40px;
+        max-width: 700px; 
+    }
+
+    #form figure {
+        align-self: center;
+    }
+
+    #subtitulo {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+        bottom: 2%;
+    }
+
+    #form label {
+        font-size: 1.3em;
+    }
+
+    #form input{
+        padding: 35px 17px;
+    }
+
+    #form ::placeholder {
+        font-size: 1.2em;
+    }
+
+    #recuperacion {
+        font-size: 1.1em;
+    }
+
+    #checkbox input {
+        transform: scale(1.5);
+    }
+
+    #btn_iniciar {
+        padding: 18px;
+        font-size: 1.3em;
+    }
+}
+
+/* Escritorio */
+@media screen and (min-width: 1024px) {
+    #cuerpo {
+        flex-direction: row;
+        height: 100vh;
+    }
+
+    #img_login {
+        display: block;
+        flex-basis: 57%;
+    }
+
+    #img_login img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    #form {
+        flex-basis: 43%;
+        padding: 50px;
+        margin: auto;
+        max-width: 500px; 
+        height: 100%;
+       
+    }
+
+    #form figure {
+        width: 60%;
+        align-self: center;
+    }
+
+    #subtitulo {
+        font-size: 1em;
+        margin-bottom: 15px;
+    }
+
+    #form label {
+        font-size: 0.9em;
+    }
+
+      #form input{
+        padding: 18px;
+    }
+
+    #form ::placeholder {
+        font-size: 1em;
+    }
+
+    #recuperacion {
+        font-size: 0.9em;
+        margin-top: 15px;
+    }
+
+    #checkbox input {
+        transform: scale(1.2);
+    }
+
+    #btn_iniciar {
+        padding: 15px 70px;
+        font-size: 1em;
+        width: auto;
+        cursor: pointer;
+    }
+
+    #btn_iniciar:hover {
+        background-color: #2a4860;
+    }
+}

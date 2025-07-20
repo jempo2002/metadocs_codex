@@ -1,0 +1,208 @@
+/* === Base (Mobile First) === */
+.contenedor-principal {
+  padding: 20px 16px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.contenedor-principal h1 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Filtro de mensajes */
+.filtro-mensajes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.filtro-mensajes label {
+  font-weight: bold;
+  font-size: 1em;
+  color: #333;
+}
+
+.filtro-mensajes select {
+  padding: 8px;
+  font-size: 1em;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+  outline: none;
+}
+
+.lista-mensajes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mensaje {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  gap: 12px;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.icono-mensaje {
+  font-size: 28px;
+  color: #3D688A;
+  flex-shrink: 0;
+}
+
+.contenido-mensaje {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenido-mensaje h2 {
+  font-size: 1.2em;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.contenido-mensaje p {
+  margin: 0;
+  color: #666;
+}
+
+.fecha-mensaje {
+  font-size: 0.9em;
+  color: #888;
+  white-space: nowrap;
+}
+.paginacion {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.btn-paginacion {
+    display: inline-block;
+    padding: 10px 16px;
+    margin: 0 2px;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    text-decoration: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    min-width: 44px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.btn-paginacion:hover {
+    background-color: #e9ecef;
+    color: #495057;
+    border: none;
+    
+}
+
+.btn-paginacion.activa {
+    background-color: #3D688A;
+    color: white;
+  
+}
+
+.btn-paginacion.activa:hover {
+    background-color: #2A4860;
+    
+    transform: none;
+}
+
+
+
+/* === Tablet (700px+) === */
+@media screen and (min-width: 700px) {
+  .mensaje {
+    padding: 20px;
+    gap: 16px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .icono-mensaje {
+    font-size: 32px;
+  }
+
+  .contenido-mensaje h2 {
+    font-size: 1.4em;
+  }
+
+  .contenido-mensaje p {
+    font-size: 1.1em;
+  }
+
+  .fecha-mensaje {
+    font-size: 1em;
+   
+  }
+}
+
+
+/* === Escritorio (1024px+) === */
+@media screen and (min-width: 1024px) {
+  .contenedor-principal {
+    margin-left: 18%;
+    padding: 40px 30px 0 0;
+  }
+
+  .contenedor-principal h1 {
+    text-align: left;
+    font-size: 2em;
+  }
+
+  .filtro-mensajes {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .filtro-mensajes select {
+    width: auto;
+  }
+
+  .mensaje {
+    padding: 24px;
+    gap: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .icono-mensaje {
+    font-size: 32px;
+  }
+
+  .contenido-mensaje h2 {
+    font-size: 1.4em;
+  }
+
+  .contenido-mensaje p {
+    font-size: 1em;
+  }
+
+  .fecha-mensaje {
+    font-size: 1em;
+    align-content: center;
+  }
+
+}

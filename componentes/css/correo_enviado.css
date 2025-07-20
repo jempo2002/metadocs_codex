@@ -1,0 +1,109 @@
+*{
+    transition: all 0.8s;
+    box-sizing: border-box;
+}
+
+html,body{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+    height: 100vh;
+    background-color: #F5F5F5;
+}
+
+#cuerpo #correo_enviado{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+   
+}
+
+#cuerpo #correo_enviado form{
+     display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 15px;
+        border-radius: 5px;
+}
+
+#correo_enviado .bi{
+    font-size: 3.5em;
+    color:#3D688A;
+}
+
+#correo_enviado p{
+    text-align: center;
+    color: #666;
+}
+
+#correo_enviado button{
+    background: #3D688A;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    width: 50%;
+    margin: 20px 0 20px 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#correo_enviado button:hover{
+    background-color: #2a4860;;
+}
+
+#correo_enviado a{
+    color: #3D688A;
+}
+
+/*Media query tablet*/
+@media screen and (min-width: 700px) and (max-width: 1023px) {
+
+    #correo_enviado .bi{
+        font-size: 8em;
+    
+    }
+
+    #correo_enviado h2{
+        font-size: 3em;
+    }
+
+    #correo_enviado p{
+        font-size: 2em;
+    }
+
+    #correo_enviado button{
+        padding: 35px;
+        width: 60%;
+        font-size: 2em;
+    }
+    
+}
+
+@media screen and (min-width: 1024px) {
+
+    #correo_enviado .bi{
+        font-size: 8em;
+    
+    }
+
+    #cuerpo #correo_enviado{
+       width: 50%;
+       justify-self: center;
+       
+    }
+
+    #cuerpo #correo_enviado form{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: #FFF;
+       
+    }
+}

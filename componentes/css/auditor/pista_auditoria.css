@@ -1,0 +1,809 @@
+/* CSS para tabla de actividades - Mobile First */
+/* Archivo: componentes/css/admin/tabla_actividades.css */
+
+/* Estilos base para móvil */
+.registro-actividades {
+    padding: 1rem;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.registro-header {
+    margin-bottom: 1.5rem;
+}
+
+.registro-header h2 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.registro-descripcion {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.filtros-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filtro-busqueda {
+    position: relative;
+    width: 100%;
+}
+
+.filtro-busqueda input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.filtro-busqueda input:focus {
+    outline: none;
+}
+
+.filtro-busqueda i {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+.filtros-selectores {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filtro-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.filtro-selector label {
+    font-size: 0.85rem;
+    color: #495057;
+    font-weight: 500;
+}
+
+.filtro-selector select {
+    padding: 0.5rem;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    background-color: white;
+    transition: border-color 0.3s ease;
+}
+
+.filtro-selector select:focus {
+    outline: none;
+}
+
+.contador-registros {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+/* Tabla responsive para móvil */
+.tabla-container {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.tabla-actividades {
+    width: 100%;
+    border-collapse: collapse;
+    display: none; /* Oculta por defecto en móvil */
+}
+
+/* Vista de tarjetas para móvil - MEJORADA */
+.actividades-cards {
+    display: block;
+    padding: 0;
+}
+
+.actividad-card {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 0;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+.actividad-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    border-color: #3D688A;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 16px;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.card-nombre {
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-nombre::before {
+    content: "👤";
+    font-size: 0.9rem;
+}
+
+.card-fecha {
+    font-size: 0.75rem;
+    color: #6c757d;
+    background: #fff;
+    padding: 4px 8px;
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.card-body {
+    padding: 16px;
+}
+
+.card-section {
+    margin-bottom: 12px;
+}
+
+.card-section:last-child {
+    margin-bottom: 0;
+}
+
+.card-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.card-accion {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.card-accion::before {
+    font-size: 0.9rem;
+}
+
+.accion-aprobo {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+    border-color: #b8dacd;
+}
+
+.accion-aprobo::before {
+    content: "✅";
+}
+
+.accion-edito {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    color: #856404;
+    border-color: #f4d03f;
+}
+
+.accion-edito::before {
+    content: "✏️";
+}
+
+.accion-solicito {
+    background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+    color: #0c5460;
+    border-color: #abdde5;
+}
+
+.accion-solicito::before {
+    content: "📋";
+}
+
+.accion-elimino {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #721c24;
+    border-color: #f1b0b7;
+}
+
+.accion-elimino::before {
+    content: "🗑️";
+}
+
+.card-archivo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0;
+}
+
+.archivo-icono {
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.archivo-icono::before {
+    font-size: 0.9rem;
+}
+
+.archivo-documento {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    color: #1565c0;
+    border-color: #90caf9;
+}
+
+.archivo-documento::before {
+    content: "📄";
+}
+
+.archivo-expediente {
+    background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+    color: #ef6c00;
+    border-color: #ffd54f;
+}
+
+.archivo-expediente::before {
+    content: "📂";
+}
+
+.archivo-no {
+    background: linear-gradient(135deg, #f5f5f5 0%, #eeeeee 100%);
+    color: #757575;
+    border-color: #e0e0e0;
+}
+
+.archivo-no::before {
+    content: "📋";
+}
+
+.card-titulo {
+    font-size: 0.95rem;
+    color: #2c3e50;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 4px solid #3D688A;
+}
+
+.card-titulo::before {
+    content: "📝 ";
+    color: #3D688A;
+    margin-right: 4px;
+}
+
+/* Separador visual entre secciones */
+.card-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, #e9ecef 50%, transparent 100%);
+    margin: 12px 0;
+}
+
+/* Animación para las tarjetas */
+.actividad-card {
+    animation: slideInUp 0.4s ease-out;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto hover mejorado */
+.actividad-card:hover .card-accion {
+    transform: scale(1.05);
+}
+
+.actividad-card:hover .archivo-icono {
+    transform: scale(1.05);
+}
+
+.actividad-card:hover .card-titulo {
+    background: #e9ecef;
+    border-left-color: #2a4a66;
+}
+
+.mensaje-sin-resultados {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #6c757d;
+    background: #f8f9fa;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.mensaje-sin-resultados i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #dee2e6;
+}
+
+.mensaje-sin-resultados p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Mejoras adicionales para móvil */
+@media screen and (max-width: 480px) {
+    .actividad-card {
+        margin-bottom: 12px;
+        border-radius: 10px;
+    }
+    
+    .card-header {
+        padding: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .card-nombre {
+        font-size: 1rem;
+    }
+    
+    .card-fecha {
+        align-self: flex-end;
+        margin-top: -24px;
+    }
+    
+    .card-body {
+        padding: 12px;
+    }
+    
+    .card-section {
+        margin-bottom: 10px;
+    }
+    
+    .card-accion {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .archivo-icono {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+    
+    .card-titulo {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    
+    .card-label {
+        font-size: 0.7rem;
+    }
+}
+
+/* PAGINACIÓN MEJORADA PARA MÓVIL */
+.paginacion-container {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.info-paginacion {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #6c757d;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.paginacion-controles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* Botones de navegación (Anterior/Siguiente) */
+.btn-paginacion {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    background: #f8f9fa;
+    color: #6c757d;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 80px;
+    justify-content: center;
+}
+
+.btn-paginacion:hover:not(:disabled) {
+    background: #e9ecef;
+    border-color: #adb5bd;
+    color: #495057;
+}
+
+.btn-paginacion:disabled {
+    background: #f8f9fa;
+    color: #ced4da;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Contenedor de números de página */
+.numeros-pagina {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 10px;
+}
+
+/* Botones de números de página */
+.numero-pagina,
+.btn-numero-pagina {
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: #6c757d;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.numero-pagina:hover,
+.btn-numero-pagina:hover {
+    background: #f8f9fa;
+    border-color: #adb5bd;
+    color: #495057;
+}
+
+/* Página activa */
+.numero-pagina.activo,
+.btn-numero-pagina.activo {
+    background: #3D688A;
+    color: #fff;
+    border-color: #3D688A;
+    font-weight: 600;
+}
+
+.numero-pagina.activo:hover,
+.btn-numero-pagina.activo:hover {
+    background: #2a4a66;
+    border-color: #2a4a66;
+}
+
+/* Puntos suspensivos */
+.numero-pagina.puntos {
+    cursor: default;
+    background: transparent;
+    border: none;
+    color: #6c757d;
+    font-weight: 600;
+}
+
+.numero-pagina.puntos:hover {
+    background: transparent;
+    border: none;
+    color: #6c757d;
+}
+
+/* Indicador de carga */
+.loading-indicator {
+    text-align: center;
+    padding: 40px;
+    color: #6c757d;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3D688A;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* RESPONSIVE PARA PAGINACIÓN */
+
+/* Móvil pequeño (hasta 480px) */
+@media screen and (max-width: 480px) {
+    .paginacion-container {
+        padding: 10px;
+        margin-top: 15px;
+    }
+    
+    .info-paginacion {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    
+    .paginacion-controles {
+        gap: 4px;
+    }
+    
+    .btn-paginacion {
+        padding: 8px 12px;
+        font-size: 12px;
+        min-width: 70px;
+    }
+    
+    .numero-pagina,
+    .btn-numero-pagina {
+        min-width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
+    
+    .numeros-pagina {
+        gap: 4px;
+        margin: 0 6px;
+    }
+    
+    /* Ocultar algunos números en móvil muy pequeño */
+    .numero-pagina:not(.activo):not(.puntos):nth-child(n+4):nth-child(-n+7) {
+        display: none;
+    }
+}
+
+/* Tablet - 768px en adelante */
+@media screen and (min-width: 768px) {
+    .registro-actividades {
+        padding: 2rem;
+    }
+
+    .registro-header h2 {
+        font-size: 2rem;
+    }
+
+    .filtros-container {
+        flex-direction: row;
+        align-items: end;
+        gap: 1.5rem;
+        margin-bottom: 60px;
+    }
+
+    .filtro-busqueda {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .filtros-selectores {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .filtro-selector {
+        min-width: 150px;
+    }
+
+    /* Mostrar tabla en tablet */
+    .actividades-cards {
+        display: none;
+    }
+
+    .tabla-actividades {
+        display: table;
+    }
+
+    .tabla-actividades th,
+    .tabla-actividades td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .tabla-actividades th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+        color: #495057;
+        font-size: 0.9rem;
+    }
+
+    .tabla-actividades td {
+        font-size: 0.9rem;
+    }
+
+    .tabla-nombre {
+        font-weight: 600;
+        color: #2c3e50;
+    }
+
+    .tabla-fecha {
+        color: #6c757d;
+        font-size: 0.85rem;
+    }
+
+    .tabla-titulo {
+        color: #495057;
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* Paginación para tablet */
+    .paginacion-container {
+        margin-top: 30px;
+        padding: 20px;
+    }
+    
+    .info-paginacion {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .paginacion-controles {
+        gap: 10px;
+    }
+    
+    .btn-paginacion {
+        padding: 12px 20px;
+        font-size: 15px;
+        min-width: 90px;
+    }
+    
+    .numero-pagina,
+    .btn-numero-pagina {
+        min-width: 45px;
+        height: 45px;
+        font-size: 15px;
+    }
+    
+    .numeros-pagina {
+        gap: 8px;
+        margin: 0 15px;
+    }
+}
+
+/* Desktop - 1024px en adelante */
+@media screen and (min-width: 1024px) {
+    .tabla-actividades th,
+    .tabla-actividades td {
+        padding: 1.25rem;
+    }
+
+    .tabla-titulo {
+        max-width: 250px;
+    }
+
+    .filtro-busqueda {
+        min-width: 400px;
+    }
+
+    .filtros-selectores {
+        gap: 1.5rem;
+    }
+
+    .filtro-selector {
+        min-width: 180px;
+    }
+
+    /* Paginación para desktop */
+    .paginacion-container {
+        margin-top: 40px;
+        padding: 25px;
+    }
+    
+    .info-paginacion {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+    
+    .paginacion-controles {
+        gap: 12px;
+    }
+    
+    .btn-paginacion {
+        padding: 14px 24px;
+        font-size: 16px;
+        min-width: 100px;
+    }
+    
+    .numero-pagina,
+    .btn-numero-pagina {
+        min-width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+    
+    .numeros-pagina {
+        gap: 10px;
+        margin: 0 20px;
+    }
+}
+
+/* Animaciones y transiciones */
+.actividad-card,
+.tabla-actividades tbody tr {
+    transition: all 0.3s ease;
+}
+
+.tabla-actividades tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.actividad-card,
+.tabla-actividades tbody tr {
+    animation: fadeIn 0.3s ease;
+}
