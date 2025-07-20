@@ -78,7 +78,7 @@ AutorizacionRol('documentador');
         <section id="admin-contenido" class="admin">
             <h1 class="titulo-documentador">Bienvenido Documentador</h1>
 
-            <h2 class="titulo-mediano">selecciona a donde quieres dirigirte</h2>
+            <h2 class="titulo-mediano">Selecciona la sección a la que deseas acceder</h2>
 
             <div class="contenedor-general">
                 
