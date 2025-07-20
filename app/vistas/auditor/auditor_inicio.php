@@ -5,6 +5,22 @@ require_once '../../helpers/conexion_bd.php';
 
 AutorizacionRol('auditor');
 
+// Obtener métricas de la base de datos
+$query = "SELECT
+    SUM(CASE WHEN estado='aprobado' THEN 1 ELSE 0 END) AS aprobados,
+    SUM(CASE WHEN estado='revision' THEN 1 ELSE 0 END) AS revision,
+    SUM(CASE WHEN estado='rechazado' THEN 1 ELSE 0 END) AS rechazados,
+    SUM(CASE WHEN estado='revision' THEN 1 ELSE 0 END) AS pendientes
+FROM documentos";
+
+$resultadoMetricas = mysqli_query($conexion_metadocs, $query);
+$metricas = mysqli_fetch_assoc($resultadoMetricas);
+
+$aprobados = $metricas['aprobados'] ?? 0;
+$revision = $metricas['revision'] ?? 0;
+$rechazados = $metricas['rechazados'] ?? 0;
+$pendientes = $metricas['pendientes'] ?? 0;
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -95,7 +111,7 @@ AutorizacionRol('auditor');
                             <i class="bi bi-check-circle-fill"></i>
                         </div>
                         <div class="metrica-info">
-                            <h3 class="metrica-numero"><?php echo "99" ?></h3>
+                            <h3 class="metrica-numero"><?php echo $aprobados; ?></h3>
                             <p class="metrica-label">Documentos Aprobados</p>
                         </div>
                     </div>
@@ -105,7 +121,7 @@ AutorizacionRol('auditor');
                             <i class="bi bi-clock-history"></i>
                         </div>
                         <div class="metrica-info">
-                            <h3 class="metrica-numero"><?php echo "99" ?></h3>
+                            <h3 class="metrica-numero"><?php echo $revision; ?></h3>
                             <p class="metrica-label">En Revisión</p>
                         </div>
                     </div>
@@ -115,7 +131,7 @@ AutorizacionRol('auditor');
                             <i class="bi bi-x-circle-fill"></i>
                         </div>
                         <div class="metrica-info">
-                            <h3 class="metrica-numero"><?php echo "99" ?></h3>
+                            <h3 class="metrica-numero"><?php echo $rechazados; ?></h3>
                             <p class="metrica-label">Documentos Rechazados</p>
                         </div>
                     </div>
@@ -125,7 +141,7 @@ AutorizacionRol('auditor');
                             <i class="bi bi-exclamation-triangle-fill"></i>
                         </div>
                         <div class="metrica-info">
-                            <h3 class="metrica-numero"><?php echo "99" ?></h3>
+                            <h3 class="metrica-numero"><?php echo $pendientes; ?></h3>
                             <p class="metrica-label">Pendientes de Revisión</p>
                         </div>
                     </div>
